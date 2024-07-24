@@ -1,0 +1,59 @@
+id;Nombre;Categoria;Dimensiones;materiales;Stock
+1;Smile;Diseño;79 x 50 x 43,5 cm;Polimero Plastico (PP);si
+2;Rio;Diseño;78 x 48 x 42 cm;Polimero Plastico (PP);si
+3;Palta;Diseño;74,5 x 44 x 39 cm;PP y Metal;si
+4;Frida;Diseño;76 x 54 x 54 cm;PP y metal;si
+5;Nina;Diseño;87 x 55 x 49 cm;PP y metal;si
+6;Quina;Diseño;82,5 x 52 x 43 cm;PP y metal;si
+7;One;Diseño;75,5 x 56 x 52 cm;PP y metal;si
+8;Jim;Diseño;77 x 59 x 52 cm;PP y metal;si
+9;Malba;Diseño;83 x 54 x 54 cm;PP y metal;si
+10;Lola;Diseño;88,5 x 39,5 x 53,5 cm;PP y metal;si
+11;Anana;Diseño;82,5 x 53 x 39 cm;PP y metal;si
+12;Milo_taburete;Diseño;75 x 49 x 46 cm;PP y metal;si
+13;Milito_Taburete;Comercial;56 x 41 x 44 cm;PP y metal;si
+14;Rombo_taburete;Comercial;109 x 46 x 54 cm;PP y metal;si
+15;Frida_Taburete;Comercial;108 x 56 x 60 cm;PP y metal;si
+16;Anana_taburete;Comercial;117 x 50 x 50 cm;PP y Madera;si
+17;Nina_taburete;Comercial;115 x 55,5 x 56 cm;PP y metal;si
+18;Quina_Taburete;Comercial;115 x 55,5 x 56 cm;PP y metal;si
+19;Palta_wood;Diseño;74,5 x 44 x 39 cm;PP y Madera;si
+20;Frida_wood;Diseño;76 x 55 x 51 cm;PP y Madera;si
+21;One_wood;Diseño;79 x 52 x 50 cm;PP y Madera;si
+22;Jim_wood;Diseño;79 x 52 x 48 cm;PP y Madera;si
+23;Nina_wood;Diseño;87 x 48 x 44 cm;PP y Madera;si
+24;Milo_taburete_wood;Diseño;75 x 43 x 45 cm;PP y Madera;si
+25;Frida_tapizada;Diseño;76 x 54 x 54 cm;PP Tapizado y Madera /Metal;si
+26;One_tapizada;Diseño;75,5 x 56 x 52 cm;PP Tapizado y Madera /Metal;si
+27;Nina_tapizada;Diseño;87 x 55 x 49 cm;PP Tapizado y Madera /Metal;si
+28;Quina_tapizada;Diseño;82,5 x 52 x 43 cm;PP Tapizado y Madera /Metal;si
+29;Frida_Taburete_tapizado;Diseño;107,5 x 56 x 52 cm;PP Tapizado y Madera /Metal;si
+30;Quina_Taburete_tapizado;Diseño;115 x 55,5 x 56 cm;PP Tapizado y Madera /Metal;si
+31;Milo_Taburete;Diseño;75 x 49 x 46 cm;PP Tapizado y Madera /Metal;si
+32;Milo_taburete_tapizado;Diseño;75 x 49 x 46 cm;PP Tapizado y Madera /Metal;si
+33;Taburete_Rombo;Diseño;109 x 46 x 54 cm;PP Tapizado y Madera /Metal;si
+34;Tandem_2C;Oficina/comercial;Base=(39 x 100 x 59 cm);Monocasco Personalizado;si
+35;Tandem_3C;Oficina/comercial;Base=(39 x 150 x 59 cm);Monocasco Personalizado;si
+36;Tandem_4C;Oficina/comercial;Base=(39 x 200 x 59 cm);Monocasco Personalizado;si
+37;Anana_Neumatica;Oficina;74,5 x 44 x 39 cm;PP y metal;si
+38;One_Neumatica;Oficina;74,5 x 44 x 39 cm;PP y metal;si
+39;Frida_Neumatica;Oficina;74,5 x 44 x 39 cm;PP y metal;si
+40;Nina_Neumatica;Oficina;74,5 x 44 x 39 cm;PP y metal;si
+41;Milito_Neumatico;Oficina;74,5 x 44 x 39 cm;PP y metal;si
+42;Chino_Neumatico;Oficina;74,5 x 44 x 39 cm;PP y metal;si
+43;R_700;Oficina;74,5 x 44 x 39 cm;PP y metal;si
+44;R_701;Oficina;74,5 x 44 x 39 cm;PP Tapizado y metal;si
+45;R_851;Oficina;74,5 x 44 x 39 cm;PP y metal;si
+46;Rombo;Oficina;74,5 x 44 x 39 cm;PP tapizado y tela;si
+47;Fresa;Oficina-Operativa;74,5 x 44 x 39 cm;PP tapizado y tela;si
+48;India;Oficina-Operativa;74,5 x 44 x 39 cm;PP tapizado;si
+49;Petra;Oficina-Operativa;74,5 x 44 x 39 cm;PP tapizado;si
+50;Roby;Oficina-Operativa;74,5 x 44 x 39 cm;PP tapizado;si
+51;Tyson;Oficina-Operativa;74,5 x 44 x 39 cm;PP tapizado;si
+52;Riota;Oficina-Operativa;74,5 x 44 x 39 cm;PP tapizado y metal;si
+53;Alma;Oficina-Ejecutiva;74,5 x 44 x 39 cm;PP tapizado y tela;si
+54;Citiz;Oficina-Ejecutiva;74,5 x 44 x 39 cm;PP tapizado y tela;si
+55;Tokio;Oficina-Ejecutiva;74,5 x 44 x 39 cm;PP tapizado y tela;si
+56;Antlia;Oficina-Gerencial;74,5 x 44 x 39 cm;PP tapizado;si
+57;Electra;Oficina-Gerencial;74,5 x 44 x 39 cm;PP tapizado;si
+58;Mandarin;Oficina-Gerencial;74,5 x 44 x 39 cm;PP tapizado;si

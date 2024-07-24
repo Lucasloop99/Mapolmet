@@ -1,0 +1,253 @@
+/*transicion*/
+body {
+  transition: background-color 0.5s ease, font-family 0.5s ease 0.3s; /* Transición suave para el cambio de fondo y font-family */
+}
+
+/*barra de navegacion*/
+
+.navbar-brand {
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.navbar-nav .nav-link {
+  animation: fadeInRight 1s ease-in-out;
+}
+
+.dropdown-menu {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilos por defecto */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+.thumbnail {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+  padding: 20px;
+}
+
+.group.product-img {
+  width: 100%;
+  height: auto;
+}
+
+.group.inner.list-group-item-heading {
+  position: relative;
+  left: -100px;
+  transition: left 0.5s ease-in-out;
+}
+
+.group.inner.list-group-item-heading:hover {
+  left: 0;
+}
+.group.inner.list-group-item-text {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.btn-success {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #449d44;
+  border-color: #449d44;
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.header {
+  font-size: 24px;
+}
+
+/* Estilos para la categoría "Oficina" */
+body.electronics {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #cfeeff;
+  color: #0069d9;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+.thumbnail {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+  padding: 20px;
+}
+
+.group.product-img {
+  width: 100%;
+  height: auto;
+}
+
+.group.inner.list-group-item-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.group.inner.list-group-item-text {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.btn-success {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #138496;
+  border-color: #138496;
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.header {
+  font-size: 24px;
+}
+/* Estilos para la categoría "Comercial" */
+body.clothing {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #ffe5ea;
+  color: #dc3545;
+}
+
+/* Estilos para la categoría "Hogar" */
+body.home {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: grey;
+  color: #ffc107;
+}
+
+/*estilos de la pantalla de carga*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1); /* Fondo semi-transparente */
+  z-index: 9999; /* Asegura que la capa esté por encima de todo */
+  display: none; /* Por defecto, oculta la capa */
+}
+
+.loader {
+  border: 4px solid #f3f3f3; /* Borde gris claro */
+  border-top: 4px solid #3498db; /* Borde azul claro */
+  border-radius: 50%; /* Borde circular */
+  width: 50px; /* Ancho del loader */
+  height: 50px; /* Altura del loader */
+  animation: spin 1s linear infinite; /* Animación de rotación */
+  position: absolute;
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  margin-top: -25px; /* Ajusta la posición vertical */
+  margin-left: -25px; /* Ajusta la posición horizontal */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/*products style*/
+.card {
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.list-group-item .row {
+  align-items: center;
+}
+
+.list-group-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.view-btn {
+  cursor: pointer;
+}
+
+.view-btn i {
+  margin-right: 5px;
+}
+

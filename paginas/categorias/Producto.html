@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../CSS/detalles-test.css">
+    <link rel="stylesheet" href="../../CSS/modal.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+  <div class="animation-layer"></div>
+  <div class="macro-container">
+    <div class="row product-container">
+        <div class="image-carousel col-md-6">
+       </div>
+      <div class="product-details col-md-6" id="product-details"></div>
+      <button class="prev" onclick="prevImage()">&#10094;</button>
+      <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+    <div class="row extra-container">
+    <div class="row color-chooser col-md-12">
+      <div class="carousel">
+          <span class="color-item" style="background-color: #FFFFFF;" data-color="#FFFFFF"></span>
+          <span class="color-item" style="background-color: #9C9C9C;" data-color="#9C9C9C"></span>
+          <span class="color-item" style="background-color: #515151;" data-color="#515151"></span>
+          <span class="color-item" style="background-color: #111111;" data-color="#111111"></span>
+          <span class="color-item" style="background-color: #f80000;" data-color="#f80000"></span>
+          <span class="color-item" style="background-color: #a12312;" data-color="#a12312"></span>
+          <span class="color-item" style="background-color: #E30052;" data-color="#E30052"></span>
+          <span class="color-item" style="background-color: #4c2882;" data-color="#4c2882"></span>
+          <span class="color-item" style="background-color: #3b83bd;" data-color="#3b83bd"></span>
+          <span class="color-item" style="background-color: #5DC1B9;" data-color="#5DC1B9"></span>
+          <span class="color-item" style="background-color: #00FFFF;" data-color="#00FFFF"></span>
+          <span class="color-item" style="background-color: #004225;" data-color="#004225"></span>
+          <span class="color-item" style="background-color: #F9F0E0;" data-color="#F9F0E0"></span>
+          <span class="color-item" style="background-color: #E1C699;" data-color="#E1C699"></span>
+          <span class="color-item" style="background-color: #e4a010;" data-color="#e4a010"></span>
+          <span class="color-item" style="background-color: #C19A6B;" data-color="#C19A6B"></span>
+          <span class="color-item" style="background-color: #FF8000;" data-color="#FF8000"></span>
+          <span class="color-item" style="background-color: #0000ff;" data-color="#0000ff"></span>
+          <span class="color-item" style="background-color: #96CFBE;" data-color="#96CFBE"></span>
+          <span class="color-item" style="background-color: #FFF6D5;" data-color="#FFF6D5"></span>
+          <span class="color-item" style="background-color: #32cd32;" data-color="#32cd32"></span>
+          <span class="color-item" style="background-color: #FFFF00;" data-color="#FFFF00"></span>
+      </div>
+      <h6>(Recomendamos consultar por los colores disponibles)</h6>
+      <div class="carousel-nav">
+          <button class="prev" onclick="prevColor()">&#10094;</button>
+          <button class="next" onclick="nextColor()">&#10095;</button>
+      </div>
+    </div>
+          <div class="container_2">
+
+            <button type="button" class="btn btn-primary" id="btn" data-toggle="modal" data-target="#myModal">Realizar pedido</button>
+          <!-- Main Modal -->
+          <div class="modal" id="myModal">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Opciones</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="anim"></div>
+                    <div class="card-stack">
+                        <div class="card">
+                            <h5>Opción 1</h5>
+                            <p>Formulario Regional de cuyo (habilitado para La Rioja, Mendoza, y San Luis).</p>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal2">Abrir Regional</button>
+                        </div>
+                        <div class="card">
+                            <h5>Opción 2</h5>
+                            <p>Formulario Provincial (mercado interno de San Juan)</p>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal3">Abrir Nacional</button>
+                        </div>
+                        <div class="card">
+                          <h5>opcion 3</h5>
+                          <p>Contáctanos vía directa por Whatsapp (atención personalizada)</p>
+                          <a href="https://wa.me/542644218697" target="_blank" class="btn btn-success">Abrir contacto directo</a>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- The Second Modal 1 -->
+          <div class="modal" id="myModal2">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Formulario Regional</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <form id="pedidoForm" onsubmit="sendEmail_2(); reset(); "></form>
+                <div class="form-group">
+                  <label for="email">Correo Electronico</label>
+                  <input type="email" class="form-control" id="email" placeholder="ejemplo@Ejemplo.com">
+                </div>
+                <div class="form-group">
+                  <label for="phone">numero de telefono</label>
+                  <input type="phone" class="form-control" id="phone" placeholder="+54 12345678">
+                </div>
+                <div class="form-group">
+                  <label for="provinceSelect">Provincia</label>
+                  <select class="form-control" id="provinceSelect">
+                      <option value="La_Rioja">La Rioja</option>
+                      <option value="San_Luis">San Luis</option>
+                      <option value="Mendoza">Mendoza</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for="regionSelect">Región</label>
+                <select class="form-control" id="regionSelect">
+                    <option value="">Seleccione una región</option>
+                </select>
+            </div>
+            <script>
+                const regions = {
+                    La_Rioja: ['Arauco', 'Capital', 'Castro Barros', 'Chamical', 'Chilecito', 'Coronel Felipe Varela', 'Famatina', 'General Ángel V. Peñaloza', 'General Belgrano', 'General Juan Facundo Quiroga', 'General Lamadrid', 'General Ocampo', 'General San Martín', 'Independencia', 'Rosario Vera Peñaloza', 'San Blas de los Sauces', 'Sanagasta', 'Vinchina'],
+                    San_Luis: ['Ayacucho', 'Belgrano', 'Chacabuco', 'Coronel Pringles', 'General Pedernera', 'Gobernador Dupuy', 'Juan Martín de Pueyrredón', 'Junín', 'Libertador General San Martín'],
+                    Mendoza: ['Capital', 'General Alvear', 'Godoy Cruz', 'Guaymallén', 'Junín', 'La Paz', 'Las Heras', 'Lavalle', 'Luján de Cuyo', 'Maipú', 'Malargüe', 'Rivadavia', 'San Carlos', 'San Martín', 'San Rafael', 'Santa Rosa', 'Tunuyán', 'Tupungato']
+                };
+            
+                document.getElementById('provinceSelect').addEventListener('change', function() {
+                    const province = this.value;
+                    updateRegions(province);
+                });
+            
+                function updateRegions(province) {
+                    const regionSelect = document.getElementById('regionSelect');
+                    regionSelect.innerHTML = '<option value="">Seleccione una región</option>';
+            
+                    if (regions[province]) {
+                        regions[province].forEach(region => {
+                            const option = document.createElement('option');
+                            option.value = region;
+                            option.textContent = region;
+                            regionSelect.appendChild(option);
+                        });
+                    }
+                }
+            </script>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Descripcion del pedido</label>
+                  <textarea class="form-control" id="descrpicion" rows="3"></textarea>
+                </div>
+                <div>
+                  <button class="btn btn-info" type="submit">Realizar pedido</button>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+          <!-- The Second Modal 2 -->
+          <div class="modal" id="myModal3">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Formulario San Juan</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <form id="pedidoForm">
+                <div class="form-group">
+                  <label for="email">Correo Electronico</label>
+                  <input type="email" class="form-control" id="email" placeholder="ejemplo@Ejemplo.com">
+                </div>
+                <div class="form-group">
+                  <label for="phone">numero de telefono</label>
+                  <input type="phone" class="form-control" id="phone" placeholder="+54 12345678">
+                </div>
+                <!-- Modal Body -->
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Departamento</label>
+                  <select class="form-control" id="Departamento">
+                    <option>Capital</option>
+                    <option>Rivadavia</option>
+                    <option>Santa Lucía</option>
+                    <option>Rawson</option>
+                    <option>Pocito</option>
+                    <option>Zonda</option>
+                    <option>Ullúm</option>
+                    <option>Chimbas</option>
+                    <option>9 de Julio</option>
+                    <option>Albardón.</option>
+                    <option>Angaco</option>
+                    <option>San Martín</option>
+                    <option>Caucete</option>
+                    <option>25 de Mayo</option>
+                    <option>Sarmiento</option>
+                    <option>Calingasta</option>
+                    <option>Iglesia</option>
+                    <option>Jáchal</option>
+                    <option> Valle Fértil</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Descripcion del pedido</label>
+                  <textarea class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <div>
+                  <button class="btn btn-info" type="submit">Realizar pedido</button>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <footer>
+    <script src="../../scripts/modal.js"></script>
+    <script src="../../scripts/TabBack-anim.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../scripts/prueba-producto.js"></script>
+  </footer>
+  </body>
+</html>
+

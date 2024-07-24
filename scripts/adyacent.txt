@@ -1,0 +1,22 @@
+`
+    <table>
+    <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Dimensiones</th>
+                <th>materiales</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>${product.Nombre}</td>
+                <td>${product.Categoria}</td>
+                <td>${product.Dimensiones}</td>
+                <td>${product.materiales}</td>
+                <td>${product.Stock}</td>
+            <tr>
+        </tbody>
+    <table>
+    `

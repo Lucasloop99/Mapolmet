@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaPolMet.com</title>
+  <link rel="stylesheet" href="../CSS/multi-style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">MaPolMet</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost/MaPolMet/paginas/">Inicio <span
+              class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Filtrar por:
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+            <a class="dropdown-item" id="ordenMenorPrecio" href="#">Menor precio</a>
+            <a class="dropdown-item" id="ordenMayorPrecipo" href="#">Mayor Precio</a>
+            <a class="dropdown-item" id="ordenPopulares" href="#">Populares</a>
+            <a class="dropdown-item" id="ordenAZ" href="#">Orden A-Z</a>
+            <a class="dropdown-item" id="ordenZA" href="#">Orden Z-A</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Ambientes:
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+            <a class="dropdown-item" href="#" onclick="changeStyles('Oficina')">Oficina</a>
+            <a class="dropdown-item" href="#" onclick="changeStyles('comercial')">Comercial</a>
+            <a class="dropdown-item" href="#" onclick="changeStyles('hogar')">Hogar</a>
+            <a class="dropdown-item" href="#" onclick="changeStyles('standar')">Todos los Ambientes</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Próximamente...</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Buscar productos
+        </button>
+      </form>
+      <div class="well well-sm">
+        <strong>Visualizar en:</strong>
+        <div class="btn-group">
+          <a href="#" id="list" class="btn btn-default view-btn active btn-sm" data-view="list"><span
+              class="glyphicon glyphicon-th-list"></span>Lista</a>
+          <a href="#" id="grid" class="btn btn-default view-btn active btn-sm" data-view="grid"><span
+              class="glyphicon glyphicon-th"></span>Tarjeta</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="Back-anim"></div>
+  <div class="overlay" id="overlay">
+    <div class="loader"></div>
+  </div>
+  <!--<div class="container">
+      
+        <div class="filter">
+          <select id="price-filter">
+            <option value="">ordenar por:</option>
+            <option value="low-to-high">mas baratos primero</option>
+            <option value="high-to-low">mas caros primero</option>
+            <option value="popular">mas vendidos</option>
+            <option value="alfabet">alfabetico</option>
+          </select>
+          <select id="category-filter">
+            <option value="">categoria</option>
+            <option value="chairs">sillas</option>
+            <option value="desks">escritorios</option>
+            <option value="desks">combos</option>
+          </select>
+        </div class="row">
+        <h3>estas listo para realizar tu pedido?</h3>
+        <button class="btn btn-success">realizar pedido</button>
+        </div>
+        </div>
+      </div>
+    </div>-->
+  <div class="container">
+   <div class="row">
+    <div class="col-4">
+      <div class="card">
+        <img src="../../Assets/Rossi_(OG)/Smile/1.png" class="card-img-top" alt="Smile Image" />
+        <div class="card-body">
+          <h5 class="card-title">Smile</h5>
+          <a href="../categorias/Producto.html?id=1" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <img src="../../Assets/Rossi_(OG)/Rio/1.png" class="card-img-top" alt="Rio Image" />
+        <div class="card-body">
+          <h5 class="card-title">Rio</h5>
+          <a href="../categorias/Producto.html?id=2" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <img src="../../Assets/Rossi_(OG)/Palta/1.png" class="card-img-top" alt="Palta Image" />
+        <div class="card-body">
+          <h5 class="card-title">Palta</h5>
+          <a href="../categorias/Producto.html?id=3" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+   </div>
+  <div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Frida/1.png" class="card-img-top" alt="Frida Image" />
+      <div class="card-body">
+        <h5 class="card-title">Frida</h5>
+        
+        <a href="../categorias/Producto.html?id=4" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Nina/1.png" class="card-img-top" alt="Nina Image" />
+      <div class="card-body">
+        <h5 class="card-title">Nina</h5>
+        
+        <a href="../categorias/Producto.html?id=5" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Quina/1.png" class="card-img-top" alt="Quina Image" />
+      <div class="card-body">
+        <h5 class="card-title">Quina</h5>
+        <a href="../categorias/Producto.html?id=6" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/One/1.png" class="card-img-top" alt="One Image" />
+      <div class="card-body">
+        <h5 class="card-title">One</h5>
+        
+        <a href="../categorias/Producto.html?id=7" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Jim/1.png" class="card-img-top" alt="Jim Image" />
+      <div class="card-body">
+        <h5 class="card-title">Jim</h5>
+        
+        <a href="../categorias/Producto.html?id=8" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Malba/1.png" class="card-img-top" alt="Malba Image" />
+      <div class="card-body">
+        <h5 class="card-title">Malba</h5>
+        
+        <a href="../categorias/Producto.html?id=9" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Lola/1.png" class="card-img-top" alt="Lola Image" />
+      <div class="card-body">
+        <h5 class="card-title">Lola</h5>
+        
+        <a href="../categorias/Producto.html?id=10" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Anana/1.png" class="card-img-top" alt="Anana Image" />
+      <div class="card-body">
+        <h5 class="card-title">Anana</h5>
+        
+        <a href="../categorias/Producto.html?id=11" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Milo_taburete/1.png" class="card-img-top" alt="Milo_taburete Image" />
+      <div class="card-body">
+        <h5 class="card-title">Milo_taburete</h5>
+        
+        <a href="../categorias/Producto.html?id=12" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Milito_Taburete/1.png" class="card-img-top" alt="Milito_Taburete Image" />
+      <div class="card-body">
+        <h5 class="card-title">Milito_Taburete</h5>
+        
+        <a href="../categorias/Producto.html?id=13" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Rombo_taburete/1.png" class="card-img-top" alt="Rombo_taburete Image" />
+      <div class="card-body">
+        <h5 class="card-title">Rombo_taburete</h5>
+        
+        <a href="../categorias/Producto.html?id=14" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Frida_Taburete/1.png" class="card-img-top" alt="Frida_Taburete Image" />
+      <div class="card-body">
+        <h5 class="card-title">Frida_Taburete</h5>
+        
+        <a href="../categorias/Producto.html?id=15" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Anana_taburete/1.png" class="card-img-top" alt="Anana_taburete Image" />
+      <div class="card-body">
+        <h5 class="card-title">Anana_taburete</h5>
+        
+        <a href="../categorias/Producto.html?id=16" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Nina_taburete/1.jpg" class="card-img-top" alt="Nina_taburete Image" />
+      <div class="card-body">
+        <h5 class="card-title">Nina_taburete</h5>
+        
+        <a href="../categorias/Producto.html?id=17" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Quina_Taburete/4.png" class="card-img-top" alt="Quina_Taburete Image" />
+      <div class="card-body">
+        <h5 class="card-title">Quina_Taburete</h5>
+        
+        <a href="../categorias/Producto.html?id=18" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Palta_wood/1.jpg" class="card-img-top" alt="Palta_wood Image" />
+      <div class="card-body">
+        <h5 class="card-title">Palta_wood</h5>
+        
+        <a href="../categorias/Producto.html?id=19" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Frida_wood/1.jpg" class="card-img-top" alt="Frida_wood Image" />
+      <div class="card-body">
+        <h5 class="card-title">Frida_wood</h5>
+        
+        <a href="../categorias/Producto.html?id=20" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/One_wood/1.jpg" class="card-img-top" alt="One_wood Image" />
+      <div class="card-body">
+        <h5 class="card-title">One_wood</h5>
+        
+        <a href="../categorias/Producto.html?id=21" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Jim_wood/1.jpg" class="card-img-top" alt="Jim_wood Image" />
+      <div class="card-body">
+        <h5 class="card-title">Jim_wood</h5>
+        
+        <a href="../categorias/Producto.html?id=22" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Nina_wood/1.jpg" class="card-img-top" alt="Nina_wood Image" />
+      <div class="card-body">
+        <h5 class="card-title">Nina_wood</h5>
+        
+        <a href="../categorias/Producto.html?id=23" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Milo_wood/1.jpg" class="card-img-top" alt="Milo_taburete_wood Image" />
+      <div class="card-body">
+        <h5 class="card-title">Milo_taburete_wood</h5>
+        
+        <a href="../categorias/Producto.html?id=24" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Frida_tapizada/1.jpg" class="card-img-top" alt="Frida_tapizada Image" />
+      <div class="card-body">
+        <h5 class="card-title">Frida_tapizada</h5>
+        
+        <a href="../categorias/Producto.html?id=25" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/One_tapizada/1.jpg" class="card-img-top" alt="One_tapizada Image" />
+      <div class="card-body">
+        <h5 class="card-title">One_tapizada</h5>
+        
+        <a href="../categorias/Producto.html?id=26" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Nina_tapizada/1.jpg" class="card-img-top" alt="Nina_tapizada Image" />
+      <div class="card-body">
+        <h5 class="card-title">Nina_tapizada</h5>
+        
+        <a href="../categorias/Producto.html?id=27" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Quina_tapizada/1.jpg" class="card-img-top" alt="Quina_tapizada Image" />
+      <div class="card-body">
+        <h5 class="card-title">Quina_tapizada</h5>
+        
+        <a href="../categorias/Producto.html?id=28" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Frida_Taburete_tapizado/1.jpg" class="card-img-top"
+        alt="Frida_Taburete_tapizado Image" />
+      <div class="card-body">
+        <h5 class="card-title">Frida_Taburete_tapizado</h5>
+        
+        <a href="../categorias/Producto.html?id=29" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Quina_Taburete_tapizado/1.jpg" class="card-img-top"
+        alt="Quina_Taburete_tapizado Image" />
+      <div class="card-body">
+        <h5 class="card-title">Quina_Taburete_tapizado</h5>
+        
+        <a href="../categorias/Producto.html?id=30" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Milo_Taburete_tapizado/1.jpg" class="card-img-top"
+        alt="Milo_Taburete_tapizado Image" />
+      <div class="card-body">
+        <h5 class="card-title">Milo_Taburete_tapizado</h5>
+        
+        <a href="../categorias/Producto.html?id=31" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Rombo_taburete/1.png" class="card-img-top" alt="Taburete_Rombo Image" />
+      <div class="card-body">
+        <h5 class="card-title">Taburete_Rombo</h5>
+        
+        <a href="../categorias/Producto.html?id=32" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Tandem_2C/1.png" class="card-img-top" alt="Tandem_2C Image" />
+      <div class="card-body">
+        <h5 class="card-title">Tandem_2C</h5>
+        
+        <a href="../categorias/Producto.html?id=33" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+ </div>
+  <div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Tandem_3C/1.png" class="card-img-top" alt="Tandem_3C Image" />
+      <div class="card-body">
+        <h5 class="card-title">Tandem_3C</h5>
+        
+        <a href="../categorias/Producto.html?id=34" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Tandem_4C/1.png" class="card-img-top" alt="Tandem_4C Image" />
+      <div class="card-body">
+        <h5 class="card-title">Tandem_4C</h5>
+        
+        <a href="../categorias/Producto.html?id=35" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Anana_neuamtica/1.png" class="card-img-top" alt="Anana_Neumatica Image" />
+      <div class="card-body">
+        <h5 class="card-title">Anana_Neumatica</h5>
+        
+        <a href="../categorias/Producto.html?id=36" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/One_Neumatica/1.jpg" class="card-img-top" alt="One_Neumatica Image" />
+      <div class="card-body">
+        <h5 class="card-title">One_Neumatica</h5>
+        
+        <a href="../categorias/Producto.html?id=37" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Frida_Neumatica/1.jpg" class="card-img-top" alt="Frida_Neumatica Image" />
+      <div class="card-body">
+        <h5 class="card-title">Frida_Neumatica</h5>
+        
+        <a href="../categorias/Producto.html?id=38" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Nina_Neumatica/1.png" class="card-img-top" alt="Nina_Neumatica Image" />
+      <div class="card-body">
+        <h5 class="card-title">Nina_Neumatica</h5>
+        
+        <a href="../categorias/Producto.html?id=39" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Milito_Neumatico/1.jpg" class="card-img-top" alt="Milito_Neumatico Image" />
+      <div class="card-body">
+        <h5 class="card-title">Milito_Neumatico</h5>
+        
+        <a href="../categorias/Producto.html?id=40" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Chino_Neumatico/1.png" class="card-img-top" alt="Chino_Neumatico Image" />
+      <div class="card-body">
+        <h5 class="card-title">Chino_Neumatico</h5>
+        
+        <a href="../categorias/Producto.html?id=41" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Rombo_neumatica/1.jpg" class="card-img-top" alt="Rombo_neumatica Image" />
+      <div class="card-body">
+        <h5 class="card-title">Rombo_neumatica</h5>
+        
+        <a href="../categorias/Producto.html?id=42" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/RP_700/1.png" class="card-img-top" alt="R_700 Image" />
+      <div class="card-body">
+        <h5 class="card-title">RP_700</h5>
+        
+        <a href="../categorias/Producto.html?id=43" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/R_701/1.png" class="card-img-top" alt="R_701 Image" />
+      <div class="card-body">
+        <h5 class="card-title">R_701</h5>
+        
+        <a href="../categorias/Producto.html?id=44" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/R_851/1.png" class="card-img-top" alt="R_851 Image" />
+      <div class="card-body">
+        <h5 class="card-title">R_851</h5>
+        
+        <a href="../categorias/Producto.html?id=45" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Fresa/1.jpg" class="card-img-top" alt="Fresa Image" />
+      <div class="card-body">
+        <h5 class="card-title">Fresa</h5>
+        
+        <a href="../categorias/Producto.html?id=46" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/India/1.jpg" class="card-img-top" alt="India Image" />
+      <div class="card-body">
+        <h5 class="card-title">India</h5>
+        
+        <a href="../categorias/Producto.html?id=47" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Petra/1.jpg" class="card-img-top" alt="Petra Image" />
+      <div class="card-body">
+        <h5 class="card-title">Petra</h5>
+        
+        <a href="../categorias/Producto.html?id=48" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Roby/1.jpg" class="card-img-top" alt="Roby Image" />
+      <div class="card-body">
+        <h5 class="card-title">Roby</h5>
+        
+        <a href="../categorias/Producto.html?id=49" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Tyson/1.png" class="card-img-top" alt="Tyson Image" />
+      <div class="card-body">
+        <h5 class="card-title">Tyson</h5>
+        
+        <a href="../categorias/Producto.html?id=50" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Riota/1.png" class="card-img-top" alt="Riota Image" />
+      <div class="card-body">
+        <h5 class="card-title">Riota</h5>
+        
+        <a href="../categorias/Producto.html?id=51" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Alma/1.png" class="card-img-top" alt="Alma Image" />
+      <div class="card-body">
+        <h5 class="card-title">Alma</h5>
+        
+        <a href="../categorias/Producto.html?id=52" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Citiz/1.png" class="card-img-top" alt="Citiz Image" />
+      <div class="card-body">
+        <h5 class="card-title">Citiz</h5>
+        
+        <a href="../categorias/Producto.html?id=53" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Tokyo/1.png" class="card-img-top" alt="Tokio Image" />
+      <div class="card-body">
+        <h5 class="card-title">Tokio</h5>
+        
+        <a href="../categorias/Producto.html?id=54" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Antila/1.png" class="card-img-top" alt="Antlia Image" />
+      <div class="card-body">
+        <h5 class="card-title">Antlia</h5>
+        
+        <a href="../categorias/Producto.html?id=55" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Electra/1.png" class="card-img-top" alt="Electra Image" />
+      <div class="card-body">
+        <h5 class="card-title">Electra</h5>
+        
+        <a href="../categorias/Producto.html?id=56" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="../../Assets/Rossi_(OG)/Mandarin/1.png" class="card-img-top" alt="Mandarin Image" />
+      <div class="card-body">
+        <h5 class="card-title">Mandarin</h5>
+        
+        <a href="../categorias/Producto.html?id=57" class="btn btn-primary">ver detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+<footer>
+  <script src="../../scripts/stock.js"></script>
+  <script src="../../scripts/products.js"></script>
+  <script src="../../scripts/showdown.js"></script>
+  <script src="../../pruebas/changer.js"></script>
+  <script src="../../scripts/order.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</footer>
+
+</html>
