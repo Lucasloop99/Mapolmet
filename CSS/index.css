@@ -22,7 +22,7 @@
 }
 
 /* Body Styles */
-css
+
 body {
   font-family: Arial, sans-serif;
   background: antiquewhite;
@@ -148,8 +148,8 @@ nav ul li a {
 
 .slider .slide-track {
   display: flex;
-  animation: scroll 40s linear infinite;
-  -webkit-animation: scroll 40s linear infinite;
+  animation: scroll 15s linear infinite;
+  -webkit-animation: scroll 15s linear infinite;
   width: calc(800px * 14);
 }
 
@@ -186,7 +186,7 @@ main {
 .carrousel-container {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   overflow: hidden;
 }
 .minimalist{
@@ -224,7 +224,7 @@ main {
 }
 .carousel {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   overflow: hidden;
   position: relative;
   margin: 0 auto;
@@ -441,27 +441,6 @@ color: orangered
 .Acerca_de .btn:hover {
   background-color: #555;
 }
-@media (max-width: 768px) {
-  .Acerca_de {
-    height: auto;
-    padding: 40px 0;
-    background-color: rgba(172, 113, 113, 0.9);
-    border-style: double;
-  }
-  
-  .Acerca_de .content {
-    padding: 20px;
-  }
-  
-  .Acerca_de h2 {
-    font-size: 28px;
-  }
-  
-  .Acerca_de p {
-    font-size: 16px;
-    font-weight: 600;
-  }
-}
 
 /* Footer Styles */
 footer {
@@ -515,4 +494,34 @@ footer {
 .w-social{
   height: 85px;
   width: 125px;
+}
+
+@media (min-width: 1024px){
+
+}
+
+@media (min-width: 768px) and (max-width 1023px){
+
+}
+
+@media (max-width: 767px) {
+  .Acerca_de {
+    height: auto;
+    padding: 40px 0;
+    background-color: rgba(172, 113, 113, 0.9);
+    border-style: double;
+  }
+  
+  .Acerca_de .content {
+    padding: 20px;
+  }
+  
+  .Acerca_de h2 {
+    font-size: 28px;
+  }
+  
+  .Acerca_de p {
+    font-size: 16px;
+    font-weight: 600;
+  }
 }
